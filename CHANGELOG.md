@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.7.1](https://github.com/toller892/adcp-salesagent-deploy/compare/v0.7.0...v0.7.1) (2026-01-13)
+
+
+### Bug Fixes
+
+* add CORS headers to MCP endpoint for browser clients ([4711145](https://github.com/toller892/adcp-salesagent-deploy/commit/4711145d7b2fb76a4a325f36f5517ef168c2e1f7))
+* Allow parameterized format_ids with width/height/duration_ms fields ([a993292](https://github.com/toller892/adcp-salesagent-deploy/commit/a9932922f348b2ef0e124e8b592ead72fb0b336a))
+* correct login URL path in pending configuration page ([543e86a](https://github.com/toller892/adcp-salesagent-deploy/commit/543e86a3662a125ad32c59f5f4c5fba8d2b580f2))
+* Link to login page instead of dashboard in pending configuration page ([3cea375](https://github.com/toller892/adcp-salesagent-deploy/commit/3cea375850694dcae29c896c89c66577c183742f))
+* Skip setup validation in test mode (ADCP_AUTH_TEST_MODE=true) ([667b6ba](https://github.com/toller892/adcp-salesagent-deploy/commit/667b6ba9c041333c10d5e9f0a851b53ece98de5e))
+* Use get_formats_for_agent in test_creative_agent to fix missing client argument ([31d3b20](https://github.com/toller892/adcp-salesagent-deploy/commit/31d3b204c7a9497b001a4c28922bd38b399fda4f))
+* Use nginx port 8000 for healthcheck instead of MCP port 8080 ([f4b18cd](https://github.com/toller892/adcp-salesagent-deploy/commit/f4b18cd44a0bdad072fe2bfa6e8e524996d580e9))
+
 ## [0.7.0](https://github.com/adcontextprotocol/salesagent/compare/v0.6.0...v0.7.0) (2026-01-08)
 
 
