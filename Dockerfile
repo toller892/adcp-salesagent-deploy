@@ -126,9 +126,9 @@ ENV ADCP_HOST=0.0.0.0
 # Internal services (MCP:8080, Admin:8001, A2A:8091) are accessed via nginx
 EXPOSE 8000
 
-# Health check
-HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-    CMD curl -f http://localhost:8080/health || exit 1
+# Health check - use nginx port (8000) which is the external-facing port
+HEALTHCHECK --interval=30s --timeout=3s --start-period=30s --retries=3 \
+    CMD curl -f http://localhost:8000/health || exit 1
 
 # Use venv Python directly as entrypoint (prepares for hardened images that lack bash)
 ENTRYPOINT ["/app/.venv/bin/python", "scripts/deploy/run_all_services.py"]
