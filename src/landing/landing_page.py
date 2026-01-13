@@ -96,7 +96,8 @@ def _generate_pending_configuration_page(tenant: dict, virtual_host: str | None 
     tenant_id = tenant.get("tenant_id", "default")
     base_url = _determine_base_url(virtual_host)
     # Link to login page instead of dashboard (dashboard requires auth)
-    admin_url = f"{base_url}/admin/tenant/{tenant_id}/login"
+    # Note: /tenant/<id>/login is the Flask route, not /admin/tenant/<id>/login
+    admin_url = f"{base_url}/tenant/{tenant_id}/login"
 
     return f"""
     <!DOCTYPE html>
