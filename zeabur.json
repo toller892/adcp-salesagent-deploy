@@ -4,5 +4,20 @@
     "type": "dockerfile",
     "dockerfile": "Dockerfile"
   },
-  "ports": [8000]
+  "start": {
+    "command": "/app/.venv/bin/python scripts/deploy/run_all_services.py"
+  },
+  "ports": [8000],
+  "healthcheck": {
+    "path": "/health",
+    "port": 8000
+  },
+  "env": {
+    "PRODUCTION": {
+      "default": "true"
+    },
+    "ADCP_AUTH_TEST_MODE": {
+      "default": "true"
+    }
+  }
 }
