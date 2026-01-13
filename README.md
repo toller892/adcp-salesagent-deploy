@@ -1,4 +1,4 @@
-# AdCP Sales Agent
+# AdCP Sales Agent 
 
 A reference implementation of the [Ad Context Protocol (AdCP)](https://adcontextprotocol.org) sales agent, enabling AI agents to buy advertising inventory through a standardized MCP interface.
 
