@@ -95,7 +95,8 @@ def _generate_pending_configuration_page(tenant: dict, virtual_host: str | None 
     tenant_name = html.escape(tenant.get("name", "Unknown Publisher"))
     tenant_id = tenant.get("tenant_id", "default")
     base_url = _determine_base_url(virtual_host)
-    admin_url = f"{base_url}/admin/tenant/{tenant_id}"
+    # Link to login page instead of dashboard (dashboard requires auth)
+    admin_url = f"{base_url}/admin/tenant/{tenant_id}/login"
 
     return f"""
     <!DOCTYPE html>
