@@ -262,11 +262,11 @@ def test_creative_agent(tenant_id, agent_id):
                 auth=auth,
             )
 
-            # Fetch formats
+            # Fetch formats using the public method that handles client creation
             loop = asyncio.new_event_loop()
             asyncio.set_event_loop(loop)
             try:
-                formats = loop.run_until_complete(registry._fetch_formats_from_agent(agent_config))
+                formats = loop.run_until_complete(registry.get_formats_for_agent(agent_config))
 
                 if formats:
                     return jsonify(
