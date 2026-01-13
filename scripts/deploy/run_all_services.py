@@ -205,7 +205,7 @@ def run_migrations():
             [sys.executable, "scripts/ops/migrate.py"],
             capture_output=True,
             text=True,
-            timeout=60,
+            timeout=300,
         )
         if result.returncode == 0:
             print("✅ Migrations complete")
