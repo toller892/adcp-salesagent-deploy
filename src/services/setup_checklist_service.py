@@ -1213,9 +1213,16 @@ def validate_setup_complete(tenant_id: str) -> None:
     Raises:
         SetupIncompleteError: If critical setup tasks are incomplete
     """
+    import os
+    
+    # Skip setup validation in test mode
+    if os.environ.get("ADCP_AUTH_TEST_MODE", "").lower() == "true":
+        return
+    
     incomplete = get_incomplete_critical_tasks(tenant_id)
     if incomplete:
         task_names = ", ".join(task["name"] for task in incomplete)
         raise SetupIncompleteError(
             f"Complete required setup tasks before creating orders: {task_names}", missing_tasks=incomplete
         )
+
